@@ -5,6 +5,7 @@ export default auth((req) => {
     const newUrl = new URL("/api/auth/signin", req.nextUrl.origin);
     return Response.redirect(newUrl);
   }
+  return Response.redirect(req.nextUrl.origin);
 });
 
 // export const config = {
@@ -15,5 +16,5 @@ export const config = {
   // * zero or more parameters
   // + one or more parameters
   // ? zero or one parameter
-  matcher: ["/users/:id*"],
+  matcher: ["/dashboard/:path*"],
 };
